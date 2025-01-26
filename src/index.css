@@ -1,0 +1,176 @@
+:root {
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --primary-color: #646cff;
+  --hover-color: #535bf2;
+  --light-bg: #f9f9f9;
+  --dark-bg: #1a1a1a;
+}
+
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-width: 320px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+  animation: gradient-shift 10s ease infinite;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+  background: linear-gradient(90deg, #ff7e5f, #feb47b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: text-glow 2s ease-in-out infinite alternate;
+}
+
+a {
+  font-weight: 500;
+  color: var(--primary-color);
+  text-decoration: inherit;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--hover-color);
+}
+
+button {
+  border-radius: 12px;
+  border: none;
+  padding: 0.8em 1.5em;
+  font-size: 1.2em;
+  font-weight: bold;
+  font-family: inherit;
+  background: var(--primary-color);
+  color: #ffffff;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto var(--primary-color);
+}
+
+
+.SearchBox {
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  animation: fade-in 1.5s ease;
+}
+
+.SearchBox form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+
+.InfoBox {
+  margin-top: 30px;
+  animation: fade-in-up 1.5s ease;
+}
+
+.cardContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+}
+
+.cardContainer:hover .MuiCard-root {
+  transform: rotateY(15deg);
+}
+
+.MuiCard-root {
+  transition: transform 0.5s ease, box-shadow 0.3s ease;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.MuiCard-root:hover {
+  transform: rotateY(0deg) scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+
+@keyframes gradient-shift {
+  0% {
+    background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+  }
+  50% {
+    background: linear-gradient(135deg, #3b82f6, #1e3a8a);
+  }
+  100% {
+    background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+  }
+}
+
+@keyframes text-glow {
+  0% {
+    text-shadow: 0 0 10px #feb47b, 0 0 20px #ff7e5f;
+  }
+  100% {
+    text-shadow: 0 0 20px #feb47b, 0 0 40px #ff7e5f;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: var(--light-bg);
+  }
+}

@@ -1,0 +1,84 @@
+.SearchBox {
+  text-align: center;
+  margin-bottom: 25px;
+  padding: 2rem;
+  background: linear-gradient(120deg, #74ebd5, #9face6);
+  border-radius: 15px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 1.2s ease-out;
+  max-width: 400px;
+  margin: 0 auto;
+  font-family: "Roboto", sans-serif;
+}
+
+.SearchBox form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.SearchBox #city {
+  width: 100%;
+  max-width: 300px;
+}
+
+.SearchBox .MuiOutlinedInput-root {
+  transition: all 0.3s ease;
+  border-radius: 10px;
+}
+
+.SearchBox .MuiOutlinedInput-root:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.SearchBox .MuiButton-root {
+  background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+  color: white;
+  font-weight: bold;
+  text-transform: none;
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.SearchBox .MuiButton-root:hover {
+  transform: scale(1.1);
+  background: linear-gradient(45deg, #fbc2eb, #a6c1ee);
+}
+
+.SearchBox p {
+  margin-top: 1rem;
+  color: #ff6b6b;
+  font-size: 0.9rem;
+  font-weight: bold;
+  animation: shake 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+}
